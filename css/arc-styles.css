@@ -1,0 +1,355 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    background-color: #0a1a2f;
+}
+   /*Scroll Bar*/
+.scroll-bar {
+  position: fixed;
+  left: 10px;          /* distance from left edge */
+  top: 0;
+  width: 6px;          /* thickness of bar */
+  height: 0;           /* will grow with scroll */
+  background-color: #00d9c0; /* ARC cyan */
+  border-radius: 3px;
+  z-index: 1000;
+}
+
+
+
+
+
+/* Header section */
+header {
+  background-color: #0a1a2f;  /* Dark blue background */
+  /*My notes you can add diferrent color for more understanding*/
+  padding: 10px 20px;        /* Some spacing inside the header */
+}
+
+/* Flex container: space between left + right */
+.header-container {
+  display: flex;
+  /*background: yellowgreen; *//*Just for understanding*/
+  justify-content: space-between; /* Logo on left, icons on right */
+  align-items: center;            /* Vertical alignment */
+}
+
+/* Brand container (logo + name) */
+.brand {
+  display: flex;              /* Puts logo and name side by side */
+  align-items: center;        /* Vertically aligns logo + text */
+}
+
+/* Logo image */
+.logo {
+  height: 50px;               /* Resize logo height (adjust as needed) */
+  margin-right: 10px;         /* Space between logo and company name */
+}
+
+/* Company name text */
+.company-name {
+  color: whitesmoke;             /* White text for contrast */
+  font-size: 1.2rem;          /* Adjust size */
+  font-weight: bold;          /* Make it stand out */
+  letter-spacing: 0.5px;      /* Slight spacing between letters */
+}
+
+
+
+
+/* Buttons for icons (search, menu later) */
+.icon-btn {
+  background: none;        /* no background box */
+  border: none;            /* remove default button border */
+  cursor: pointer;         /* hand cursor on hover */
+  color: whitesmoke;          /* icon color (white) */
+  padding: 5px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);   /* slight zoom effect */
+  color: #3aa9ff;          /* light blue on hover */
+}
+
+
+
+
+/* Hamburger uses same style as .icon-btn */
+.nav-toggle {
+  margin-left: 10px; /* space between search and menu */
+}
+
+
+
+
+
+/* ARC Intro / Banner Section */
+
+.arc-banner {
+  display: flex;
+  justify-content: center;   /* center the box horizontally */
+  align-items: center;       /* center content vertically if you want */
+  padding: 60px 20px;        /* space around the section */
+  background-color: transparent; /* no background here */
+}
+
+.arc-banner-box {
+  background-color: rgb(11, 215, 191); /* your cyan color */
+  color: #ffffff;
+  padding: 60px 40px;
+  max-width: 900px;          /* controls the box width */
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;        /* optional: rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* optional: soft shadow */
+}
+
+.arc-banner .arc-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.arc-banner .arc-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-inline: auto;  /* centers paragraph nicely */
+}
+
+
+
+
+
+
+/****Animation Effects****/
+
+/* Container for molecule background */
+.molecules {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;               /* stays behind content */
+  pointer-events: none;     /* won't block clicks */
+  overflow: hidden;
+}
+
+/* Style for floating molecules */
+.molecules img {
+  position: absolute;
+  opacity: 0.35;            /* faint so it's subtle */
+  animation: floatMolecule 20s linear forwards;
+  filter:brightness(4) invert(1); /*turns dark lines into bright white*/
+}
+
+/* Floating animation */
+@keyframes floatMolecule {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.15;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* Section Title for three different segments*/
+.arc-segments {
+  padding: 80px 20px;
+  text-align: center;
+  background: #0b2039;
+}
+
+.arc-segments .section-title {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #0a1a2f; /* ARC dark blue */
+}
+
+/* Flex container for cards */
+.segments-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* responsive */
+}
+
+/* Each card */
+.segment-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Icon inside a colored circle */
+.segment-icon {
+  background: #00d9c0; /* ARC cyan */
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segment-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Card hover effect */
+.segment-card:hover {
+  background: #e6fdf9; /* lighter cyan background */
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Learn more link */
+.segment-card .learn-more {
+  /*display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #00a08b;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;*/
+
+  background: #00a08b;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s;
+
+}
+
+.segment-card .learn-more:hover {
+  /*border-color: #00a08b;*/
+  background: #00796b;
+
+}
+
+
+
+/* Headings inside cards */
+.segment-card h3 {
+  color: #0a1a2f;   /* dark navy (matches ARC theme) */
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Paragraphs inside cards */
+.segment-card p {
+  color: #333333;   /* dark grey for readability */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.segment-card:hover h3 {
+  color: #00796b;  /* teal highlight */
+}
+
+.segment-card:hover p {
+  color: #222222;  /* slightly darker */
+}
+
+
+
+/**/
+
+/* ARC Impact Section */
+.arc-impact {
+  background: #0a1a2f;
+  padding: 80px 20px;
+}
+
+.impact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Left text */
+.impact-text {
+  flex: 1;
+  text-align: left;
+}
+
+.impact-text h2 {
+  font-size: 2.2rem;
+  color: #0a1a2f; /* ARC dark blue */
+  margin-bottom: 20px;
+}
+
+.impact-text p {
+  font-size: 1rem;
+  color: whitesmoke;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.impact-text .btn.primary {
+  background: #00a08b;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.impact-text .btn.primary:hover {
+  background: #00796b;
+}
+
+/* Right image */
+.impact-image {
+  flex: 1;
+  text-align: right;
+}
+
+.impact-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .impact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .impact-image {
+    text-align: center;
+  }
+}
+
+
+
