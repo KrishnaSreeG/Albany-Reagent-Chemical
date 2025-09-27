@@ -1,10 +1,9 @@
-
-
 body {
     font-family: Arial, sans-serif;
     color: whitesmoke;
     background-color: #0a1a2f;
 }
+
    /*Scroll Bar*/
 .scroll-bar {
   position: fixed;
@@ -16,10 +15,6 @@ body {
   border-radius: 3px;
   z-index: 1000;
 }
-
-
-
-
 
 /* Header section */
 header {
@@ -56,9 +51,6 @@ header {
   letter-spacing: 0.5px;      /* Slight spacing between letters */
 }
 
-
-
-
 /* Buttons for icons (search, menu later) */
 .icon-btn {
   background: none;        /* no background box */
@@ -74,37 +66,127 @@ header {
   color: #3aa9ff;          /* light blue on hover */
 }
 
-
-
-
 /* Hamburger uses same style as .icon-btn */
 .nav-toggle {
   margin-left: 10px; /* space between search and menu */
 }
 
+                          /* ========================= ARC Right-side Hamburger Menu ========================= */
 
+                            .hamburger-menu {
+                              position: fixed;
+                              top: 0;
+                              right: -260px; /* hide off-screen on the right */
+                              width: 240px;
+                              height: 100%;
+                              background-color:   #00d9c0;  /* #00a08b; /* ARC teal */
+                              border-radius: 15px 0 0 15px;
+                              transition: 0.4s ease;
+                              z-index: 1000;
+                              padding-top: 50px;
+                              overflow-y: auto; /* allow scrolling if content overflows */
+                            }
 
+                            /***Close Button (X) ****/
+                            .hamburger-menu .close-btn {
+                              position: absolute;
+                              top: 15px;
+                              left: 20px; 
+                              font-size: 30px;
+                              color: #fff;
+                              cursor: pointer;
+                              transition: transform 0.3s;
+                            }
 
+                            .hamburger-menu .close-btn:hover {
+                              transform: rotate(90deg); /* rotate effect on hover */
+                            }
 
-/* ARC Intro / Banner Section */
+                            /* Menu List */
+                            .hamburger-menu ul {
+                              list-style: none;
+                              margin: 0;
+                              padding: 0 20px;
+                              position: relative;
+                            }
 
+                            /* Vertical Line for Timeline Style - moved to LEFT */
+                            /*.hamburger-menu ul::before {
+                              content: "";
+                              position: absolute;
+                              left: 10px;   /* line is now on the LEFT */
+                              /*top: 0;
+                              bottom: 0;
+                              width: 2px;
+                              background: rgba(255, 255, 255, 0.6);
+                            }*/
+
+                            /* Menu Items */
+                            .hamburger-menu ul li {
+                              margin: 25px 0;
+                              position: relative;
+                              padding-left: 30px; /* space for dots on left */
+                              text-align: left;   /* align text to left now */
+                            }
+
+                            /* White Dots on the line - shifted to LEFT */
+                            .hamburger-menu ul li::before {
+                              content: "•";
+                              position: absolute;
+                              left: 2px;  /* place dot near the line */
+                              color: #fff;
+                              font-size: 22px;
+                              line-height: 1;
+                              transition: transform 0.3s, color 0.3s;
+                            }
+
+                            /* Menu Links */
+                            .hamburger-menu ul li a {
+                              text-decoration: none;
+                              font-size: 18px;
+                              color: #f5f5f5; /* soft white-gray instead of pure white */
+                              transition: color 0.3s, transform 0.3s;
+                              display: inline-block;
+                            }
+
+                            /* Hover Effects - "dancing" effect */
+                            .hamburger-menu ul li a:hover {
+                              color: #8cff00; /* gold highlight */
+                              transform: translateX(5px) scale(1.05); /* slight bounce right */
+                            }
+
+                            .hamburger-menu ul li:hover::before {
+                              color: #8cff00;/* dot changes to gold */
+                              transform: scale(1.4); /* dot grows on hover */
+                            }
+
+                            /* Active/Focused Item (optional if you want click tracking) */
+                            .hamburger-menu ul li.active a {
+                              color: #00d9c0; /* cyan highlight for active page */
+                            }
+                            .hamburger-menu ul li.active::before {
+                              color: #00d9c0;
+                              transform: scale(1.5);
+                            }
+
+/**************************************ARC Intro / Banner Section **********************************************/
 .arc-banner {
   display: flex;
-  justify-content: center;   /* center the box horizontally */
-  align-items: center;       /* center content vertically if you want */
-  padding: 60px 20px;        /* space around the section */
-  background-color: transparent; /* no background here */
+  justify-content: center;   
+  align-items: center;       
+  padding: 60px 20px;        
+  background-color: transparent; 
 }
 
 .arc-banner-box {
-  background-color: rgb(11, 215, 191); /* your cyan color */
+  background-color: rgb(11, 215, 191); 
   color: #ffffff;
   padding: 60px 40px;
-  max-width: 900px;          /* controls the box width */
+  max-width: 900px;          
   width: 100%;
   text-align: center;
-  border-radius: 6px;        /* optional: rounded corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* optional: soft shadow */
+  border-radius: 6px;        
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
 }
 
 .arc-banner .arc-content h1 {
@@ -116,37 +198,28 @@ header {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   max-width: 600px;
-  margin-inline: auto;  /* centers paragraph nicely */
+  margin-inline: auto; 
 }
 
-
-
-
-
-
-/****Animation Effects****/
-
-/* Container for molecule background */
+/********************************************Animation Effects*********************************************************/
 .molecules {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;               /* stays behind content */
-  pointer-events: none;     /* won't block clicks */
+  z-index: 0;               
+  pointer-events: none;     
   overflow: hidden;
 }
 
-/* Style for floating molecules */
 .molecules img {
   position: absolute;
-  opacity: 0.35;            /* faint so it's subtle */
+  opacity: 0.35;            
   animation: floatMolecule 20s linear forwards;
-  filter:brightness(4) invert(1); /*turns dark lines into bright white*/
+  filter:brightness(4) invert(1); 
 }
 
-/* Floating animation */
 @keyframes floatMolecule {
   0% {
     transform: translateY(100vh) scale(0.8);
@@ -164,11 +237,7 @@ header {
   }
 }
 
-
-
-
-
-/* Section Title for three different segments*/
+/**************************************************************************Section Title for three different segments*****************************************************************/
 .arc-segments {
   padding: 80px 20px;
   text-align: center;
@@ -178,7 +247,7 @@ header {
 .arc-segments .section-title {
   font-size: 2.2rem;
   margin-bottom: 50px;
-  color: #0a1a2f; /* ARC dark blue */
+  color: whitesmoke; 
 }
 
 /* Flex container for cards */
@@ -186,7 +255,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap; /* responsive */
+  flex-wrap: wrap; 
 }
 
 /* Each card */
@@ -203,7 +272,7 @@ header {
 
 /* Icon inside a colored circle */
 .segment-icon {
-  background: #00d9c0; /* ARC cyan */
+  background: #00d9c0; 
   width: 70px;
   height: 70px;
   margin: 0 auto 20px;
@@ -220,41 +289,28 @@ header {
 
 /* Card hover effect */
 .segment-card:hover {
-  background: #e6fdf9; /* lighter cyan background */
+  background: #e6fdf9; 
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Learn more link */
 .segment-card .learn-more {
-  /*display: inline-block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #00a08b;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s;*/
-
   background: #00a08b;
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
   transition: background 0.3s;
-
 }
 
 .segment-card .learn-more:hover {
-  /*border-color: #00a08b;*/
   background: #00796b;
-
 }
-
-
 
 /* Headings inside cards */
 .segment-card h3 {
-  color: #0a1a2f;   /* dark navy (matches ARC theme) */
+  color: #0a1a2f;   
   font-size: 1.3rem;
   margin-bottom: 10px;
   font-weight: bold;
@@ -262,23 +318,19 @@ header {
 
 /* Paragraphs inside cards */
 .segment-card p {
-  color: #333333;   /* dark grey for readability */
+  color: #333333;   
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 15px;
 }
 
 .segment-card:hover h3 {
-  color: #00796b;  /* teal highlight */
+  color: #00796b;  
 }
 
 .segment-card:hover p {
-  color: #222222;  /* slightly darker */
+  color: #222222;  
 }
-
-
-
-/**/
 
 /* ARC Impact Section */
 .arc-impact {
@@ -303,7 +355,7 @@ header {
 
 .impact-text h2 {
   font-size: 2.2rem;
-  color: #0a1a2f; /* ARC dark blue */
+  color: #0a1a2f; 
   margin-bottom: 20px;
 }
 
@@ -350,6 +402,3 @@ header {
     text-align: center;
   }
 }
-
-
-

@@ -51,3 +51,36 @@ document.addEventListener("scroll", () => {
   scrollBar.style.height = scrollPercent + "vh";
 });
 
+
+
+
+
+// =========================
+// ARC Right-side Hamburger Menu Toggle
+// =========================
+const menu = document.getElementById("arc-hamburger-menu");
+const openBtn = document.getElementById("openMenu");
+const closeBtn = document.getElementById("closeMenu");
+
+// Open menu (slide in from right)
+openBtn.addEventListener("click", () => {
+  menu.style.right = "0";   // move into view
+});
+
+// Close menu
+closeBtn.addEventListener("click", () => {
+  menu.style.right = "-260px"; // hide back off-screen
+});
+
+// Close when clicking a link
+document.querySelectorAll("#arc-hamburger-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.style.right = "-260px";
+  });
+});
+
+
+
+
+
+
