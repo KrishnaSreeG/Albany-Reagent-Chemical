@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Albany Reagent & Chemical (ARC)</title>
+  
+  <!-- Base ARC styles -->
+  <link rel="stylesheet" href="css/arc-styles.css">
+  
+  <!-- New contact page-specific styles -->
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-bar"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <img src="assets/images/arc_logo.jpg" alt="ARC Logo" class="logo">
+        <span class="company-name">Albany Reagent & Chemical (ARC)</span>
+      </div>
+
+      <div class="header-right">
+       <!-- <button class="icon-btn" aria-label="Search">🔍</button>-->
+        <button id="openMenu" class="icon-btn nav-toggle" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="24" y2="7"></line>
+            <line x1="4" y1="14" x2="24" y2="14"></line>
+            <line x1="4" y1="21" x2="24" y2="21"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hamburger Menu -->
+  <nav id="arc-hamburger-menu" class="hamburger-menu">
+    <span class="close-btn" id="closeMenu">&times;</span>
+    <ul>
+      <li><span class="dot"></span><a href="index.html">Home</a></li>
+      <li><span class="dot"></span><a href="index.html#about">About Us</a></li>
+      <li><span class="dot"></span><a href="index.html#technology">Technology</a></li>
+      <li><span class="dot"></span><a href="index.html#careers">Careers</a></li>
+      <li><span class="dot"></span><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Floating molecules background -->
+  <div class="molecules"></div>
+
+  <!-- =========================
+       CONTACT PAGE CONTENT
+       ========================= -->
+  <main class="contact-page">
+    <section class="team-section">
+      <!--<h1>Our Team</h1>-->
+      <div class="team-container">
+
+        <!-- Team Member 1 -->
+        <div class="team-card">
+          <!--<img src="assets/images/michael.jpg" alt="Michael Yeung">-->
+          <h2>Michael Yeung</h2>
+          <h4>Founder<br>Silent Partner & Technical Advisor</h4>
+          <ul>
+            <li>Ph.D. in Inorganic Chemistry from UCLA, Postdoc at Northwestern</li>
+            <li>University Assistant Professor at the University at Albany, SUNY</li>
+            <li>10+ years of experience in metal borides and materials chemistry research</li>
+          </ul>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+          <!--<img src="assets/images/joseph.jpg" alt="Joseph Doane">-->
+          <h2>Joseph Doane</h2>
+          <h4>Founder<br>CTO</h4>
+          <ul>
+            <li>M.S. in Chemistry from University at Albany, SUNY; Ph.D. Candidate</li>
+            <li>Technical Director of Eden Laboratory Inc.</li>
+            <li>10+ years of industrial chemistry experience in research and chemical manufacturing</li>
+          </ul>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+         <!---- <img src="assets/images/jahnavi.jpg" alt="Jahnavi Cherukuru">-->
+          <h2>Jahnavi Cherukuru</h2>
+          <h4>Founder<br>CEO</h4>
+          <ul>
+            <li>3+ years of experience in operations, research, product strategy, and commercialization</li>
+            <li>Led cross-functional projects with strong stakeholder engagement and systems thinking</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="js/arc-main.js"></script>
+</body>
+</html>
